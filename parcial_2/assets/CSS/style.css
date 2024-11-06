@@ -1,0 +1,133 @@
+:root {
+    --color-fondo-pagina: #f0f2f5;
+    --color-tarjeta: #ffffff;
+    --color-texto-principal: #333333;
+    --color-acento: #007bff;
+    --color-acento-hover: #0056b3;
+    --sombra-suave: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --sombra-media: 0 6px 12px rgba(0, 0, 0, 0.15);
+    --borde-redondeado: 10px;
+    --espaciado-contenido: 30px;
+}
+
+body {
+    background-color: var(--color-fondo-pagina);
+    color: var(--color-texto-principal);
+}
+
+.contenedor-principal {
+    background-color: var(--color-tarjeta);
+    border-radius: var(--borde-redondeado);
+    box-shadow: var(--sombra-suave);
+    padding: var(--espaciado-contenido);
+    margin-top: var(--espaciado-contenido);
+    margin-bottom: var(--espaciado-contenido);
+}
+
+/*viejo-primero*/
+#lista-heroes {
+    display: flex;
+    flex-direction: column; 
+    gap: 1rem; 
+}
+
+.tarjeta-heroe {
+    display: flex; 
+    flex-direction: row; 
+    align-items: center; 
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem; 
+    background-color: #f8f9fa; 
+}
+
+.imagen-heroe {
+    width: 200px;
+    height: 120px; 
+    object-fit: cover; 
+    margin-right: 1rem; 
+}
+
+.card-body {
+    flex: 1; 
+}
+
+.btn-principal {
+    background-color: rgb(253, 61, 61);
+    border-color: #160c0c;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-principal:hover {
+    background-color: var(--color-acento-hover);
+    border-color: var(--color-acento-hover);
+    transform: translateY(-2px);
+}
+
+
+/*/segundo*/
+
+.imagen-heroe:hover {
+    transform: scale(1.05);
+}
+
+.tarjeta-heroe:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-media);
+}
+
+.boton-descripcion {
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.boton-descripcion:hover {
+    background-color: var(--color-acento);
+    color: var(--color-tarjeta);
+}
+
+.nav-tabs .nav-link {
+    border-radius: var(--borde-redondeado) var(--borde-redondeado) 0 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link.active {
+    background-color: var(--color-acento);
+    color: var(--color-tarjeta);
+    border-color: var(--color-acento);
+}
+
+.btn-principal {
+    background-color: rgb(253, 61, 61);
+    border-color: #160c0c;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-principal:hover {
+    background-color: var(--color-acento-hover);
+    border-color: var(--color-acento-hover);
+    transform: translateY(-2px);
+}
+
+
+.card {
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.card img {
+    width: 290px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.descripcion, .form-editar {
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
