@@ -2,11 +2,13 @@
   "builds": [
     { "src": "api/index.py", "use": "@vercel/python" },
     { "src": "index.html", "use": "@vercel/static" },
-    { "src": "index.js", "use": "@vercel/static" }
+    { "src": "assets/JS/index.js", "use": "@vercel/static" },
+    { "src": "assets/CSS/style.css", "use": "@vercel/static" }
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "api/index.py" },
-    { "src": "/(.*).js", "dest": "/index.js" },
+    { "src": "/assets/JS/(.*)", "dest": "/assets/JS/$1" },
+    { "src": "/assets/CSS/(.*)", "dest": "/assets/CSS/$1" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
