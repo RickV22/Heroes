@@ -36,7 +36,7 @@ document.getElementById('formulario-heroe').addEventListener('submit', function 
         descripcion,
         imagen,
     };
-    axios.post('http://heroes-tdx5.vercel.app/api/heroes', heroData)
+    axios.post('https://heroes-tdx5.vercel.app/api/heroes', heroData)
         .then((res) => {
             alert('Héroe registrado exitosamente');  
             document.getElementById('formulario-heroe').reset();  
@@ -51,7 +51,7 @@ document.getElementById('formulario-heroe').addEventListener('submit', function 
 
 function cargarHeroes() {
     const listaHeroes = document.querySelector('#lista-heroes')
-    axios.get('http://heroes-tdx5.vercel.app/api/heroes')
+    axios.get('https://heroes-tdx5.vercel.app/api/heroes')
         .then((response) => response.data)
         .then((heroes) => {
             listaHeroes.innerHTML = '';
@@ -94,7 +94,7 @@ function mostrarDescripcion(descripcion) {
 
 
 function editarHeroe(id) {
-    axios.get(`http://heroes-tdx5.vercel.app/api/heroes/${id}`)
+    axios.get(`https://heroes-tdx5.vercel.app/api/heroes/${id}`)
         .then((response) => {
             const heroe = response.data;
 
@@ -135,7 +135,7 @@ function actualizarHeroe(id) {
         imagen,
     };
 
-    axios.put(`http://heroes-tdx5.vercel.app/api/heroes/${id}`, heroData)
+    axios.put(`https://heroes-tdx5.vercel.app/api/heroes/${id}`, heroData)
         .then(() => {
             alert('Héroe actualizado exitosamente');
             cargarHeroes(); 
@@ -164,7 +164,7 @@ function guardarCambios(id) {
         descripcion,
     };
 
-    axios.put(`http://heroes-tdx5.vercel.app/api/heroes/${id}`, heroeActualizado)
+    axios.put(`https://heroes-tdx5.vercel.app/api/heroes/${id}`, heroeActualizado)
         .then((response) => {
             alert('Héroe actualizado exitosamente');
             cargarHeroes();
@@ -178,7 +178,7 @@ function guardarCambios(id) {
 
 function eliminarHeroe(id) {
     if (confirm('¿Está seguro de eliminar este héroe?')) {
-        axios.delete(`http://heroes-tdx5.vercel.app/api/heroes/${id}`)
+        axios.delete(`https://heroes-tdx5.vercel.app/api/heroes/${id}`)
             .then((res) => {
                 alert(res.data.msg || 'Héroe eliminado exitosamente');
                 cargarHeroes();
