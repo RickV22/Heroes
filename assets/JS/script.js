@@ -36,7 +36,7 @@ document.getElementById('formulario-heroe').addEventListener('submit', function 
         descripcion,
         imagen,
     };
-    axios.post('http://127.0.0.1:5000/api/heroes', heroData)
+    axios.post('http://127.0.0.1/api/heroes', heroData)
         .then((res) => {
             alert('Héroe registrado exitosamente');  
             document.getElementById('formulario-heroe').reset();  
@@ -51,7 +51,7 @@ document.getElementById('formulario-heroe').addEventListener('submit', function 
 
 function cargarHeroes() {
     const listaHeroes = document.querySelector('#lista-heroes')
-    axios.get('http://127.0.0.1:5000/api/heroes')
+    axios.get('http://127.0.0.1/api/heroes')
         .then((response) => response.data)
         .then((heroes) => {
             listaHeroes.innerHTML = '';
@@ -79,7 +79,7 @@ function cargarHeroes() {
 
 
 function editarHeroe(id) {
-    axios.get(`http://127.0.0.1:5000/api/heroes/${id}`)
+    axios.get(`http://127.0.0.1/api/heroes/${id}`)
         .then((response) => {
             const heroe = response.data;
 
@@ -124,7 +124,7 @@ function actualizarHeroe(id) {
         imagen,
     };
 
-    axios.put(`http://127.0.0.1:5000/api/heroes/${id}`, heroData)
+    axios.put(`http://127.0.0.1/api/heroes/${id}`, heroData)
         .then(() => {
             alert('Héroe actualizado exitosamente');
             cargarHeroes();  // Refresca la lista con los datos actualizados
@@ -154,7 +154,7 @@ function guardarCambios(id) {
         descripcion,
     };
 
-    axios.put(`http://127.0.0.1:5000/api/heroes/${id}`, heroeActualizado)
+    axios.put(`http://127.0.0.1/api/heroes/${id}`, heroeActualizado)
         .then((response) => {
             alert('Héroe actualizado exitosamente');
             cargarHeroes();
@@ -168,7 +168,7 @@ function guardarCambios(id) {
 
 function eliminarHeroe(id) {
     if (confirm('¿Está seguro de eliminar este héroe?')) {
-        axios.delete(`http://127.0.0.1:5000/api/heroes/${id}`)
+        axios.delete(`http://127.0.0.1/api/heroes/${id}`)
             .then((res) => {
                 alert(res.data.msg || 'Héroe eliminado exitosamente');
                 cargarHeroes();
