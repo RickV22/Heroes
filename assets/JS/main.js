@@ -50,30 +50,33 @@ document.getElementById('formulario-heroe').addEventListener('submit', function 
 });
 
 function cargarHeroes() {
-    const listaHeroes = document.querySelector('#lista-heroes')
+    const listaHeroes = document.querySelector('#lista-heroes');
     axios.get('http://heroes-tdx5.vercel.app/api/heroes')
         .then((response) => response.data)
         .then((heroes) => {
             listaHeroes.innerHTML = '';
             heroes.forEach((heroe) => {
                 const tarjetaHeroe = `
-                    <div class="col-12 mb-4"> <!-- Ocupa todo el ancho de la fila -->
+                    <div class="col-12 mb-3">
                         <div class="card tarjeta-heroe">
-                            <img src="${heroe.imagen}" alt="Imagen de ${heroe.nombre}" class="imagen-heroe">
-                            
-                            <div class="card-body">
-                                <h5 class="card-title">${heroe.nombre}</h5>
-                                <p class="card-text">Habilidad: ${heroe.habilidad}</p>
-                                <p class="card-text">Universo: ${heroe.compania}</p>
-                                <p class="card-text">Género: ${heroe.genero}</p>
-
-                                <div class="d-flex justify-content mt-2">
-                                    <button class="btn btn-info me-2" onclick="mostrarDescripcion('${heroe.descripcion}')">Descripción</button>
+                            <div class="row">
+                                <div class="col-auto">
+                                    <img src="${heroe.imagen}" alt="Imagen de ${heroe.nombre}" class="imagen-heroe">
                                 </div>
-
-                                <div class="d-flex justify-content-end mt-2"> 
-                                    <button class="btn btn-secondary me-2" onclick="editarHeroe(${heroe.id})">Editar</button>
-                                    <button class="btn btn-danger" onclick="eliminarHeroe(${heroe.id})">Eliminar</button>
+                                <div class="col flex-cloumn">
+                                    <div class="card-body d-flex ">
+                                        <h5 class="card-title">${heroe.nombre}</h5>
+                                        <p class="card-text">Habilidad: ${heroe.habilidad}</p>
+                                        <p class="card-text">Universo: ${heroe.compania}</p>
+                                        <p class="card-text">Género: ${heroe.genero}</p>
+                                        <div class="d-flex justify-content mt-2">
+                                            <button class="btn btn-info me-2" onclick="mostrarDescripcion('${heroe.descripcion}')">Descripción</button>
+                                        </div>
+                                        <div class="d-flex justify-content-end mt-auto p-4 flex-row ">
+                                            <button class="btn btn-secondary me-2 " onclick="editarHeroe(${heroe.id})">Editar</button>
+                                            <button class="btn btn-danger" onclick="eliminarHeroe(${heroe.id})">Eliminar</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -81,6 +84,9 @@ function cargarHeroes() {
                 `;
                 listaHeroes.insertAdjacentHTML('beforeend', tarjetaHeroe);
             });
+        })
+        .catch((error) => {
+            console.error('Error al cargar los héroes:', error);
         });
 }
 
