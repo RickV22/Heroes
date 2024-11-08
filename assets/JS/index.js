@@ -66,9 +66,9 @@ function cargarHeroes() {
                                 <div class="col flex-cloumn">
                                     <div class="card-body d-flex ">
                                         <h5 class="card-title">${heroe.nombre}</h5>
-                                        <p class="card-text">Habilidad: ${heroe.habilidad}</p>
-                                        <p class="card-text">Universo: ${heroe.compania}</p>
-                                        <p class="card-text">Género: ${heroe.genero}</p>
+                                        <p class="card-text fst-italic">Habilidad: ${heroe.habilidad}</p>
+                                        <p class="card-text fst-italic">Universo: ${heroe.compania}</p>
+                                        <p class="card-text fst-italic">Género: ${heroe.genero}</p>
                                         <div class="d-flex justify-content mt-2">
                                             <button class="btn btn-info me-2" onclick="mostrarDescripcion('${heroe.descripcion}')">Descripción</button>
                                         </div>
