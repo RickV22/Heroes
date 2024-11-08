@@ -154,7 +154,7 @@ function guardarCambios(id) {
         descripcion,
     };
 
-    axios.put(`http://127.0.0.1/api/heroes/${id}`, heroeActualizado)
+    axios.put(`http://heroes-tdx5.vercel.app/api/heroes/${id}`, heroeActualizado)
         .then((response) => {
             alert('Héroe actualizado exitosamente');
             cargarHeroes();
@@ -168,7 +168,7 @@ function guardarCambios(id) {
 
 function eliminarHeroe(id) {
     if (confirm('¿Está seguro de eliminar este héroe?')) {
-        axios.delete(`http://127.0.0.1/api/heroes/${id}`)
+        axios.delete(`http://heroes-tdx5.vercel.app/api/heroes/${id}`)
             .then((res) => {
                 alert(res.data.msg || 'Héroe eliminado exitosamente');
                 cargarHeroes();
