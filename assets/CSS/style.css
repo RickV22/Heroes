@@ -1,30 +1,62 @@
 :root {
-    --color-fondo-pagina: #f0f2f5;
-    --color-tarjeta: #ffffff;
-    --color-texto-principal: #333333;
-    --color-acento: #007bff;
-    --color-acento-hover: #0056b3;
+    --color-primario: #3a0ca3;
+    --color-secundario: #f72585;
+    --color-acento: #4cc9f0;
+    --color-fondo: #f8f9fa;
+    --color-texto: #333333;
     --sombra-suave: 0 2px 4px rgba(0, 0, 0, 0.1);
     --sombra-media: 0 4px 6px rgba(0, 0, 0, 0.1);
     --borde-redondeado: 8px;
     --espaciado-contenido: 20px;
 }
 
+/* Estilo para los inputs con animación */
+form .form-control:focus,
+form .form-select:focus,
+form textarea:focus {
+    border-color: #000000;
+    box-shadow: 0 4px 8px rgba(66, 165, 245, 0.4);
+    transform: scale(1.05);
+    /* Hace un poco más grande el input al estar en foco */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Fondo de la página */
 body {
-    background-color: var(--color-fondo-pagina);
-    color: var(--color-texto-principal);
+    background-image: url('https://www.cuartomundo.cl/wp-content/uploads/2019/04/portadas-marvel-los-60-destacada-2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--color-texto);
+    font-family: 'Poppins', sans-serif;
 }
 
 .contenedor-principal {
-    background-color: var(--color-tarjeta);
-    border-radius: var(--borde-redondeado);
-    box-shadow: var(--sombra-suave);
-    padding: var(--espaciado-contenido);
-    margin-top: var(--espaciado-contenido);
-    margin-bottom: var(--espaciado-contenido);
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .tarjeta-heroe {
+    animation: fadeIn 0.5s ease-out;
     display: flex;
     flex-direction: row;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -34,35 +66,36 @@ body {
 .tarjeta-heroe:hover {
     transform: translateY(-3px);
     box-shadow: var(--sombra-media);
-    color:rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
     text-rendering: geometricPrecision;
 }
 
-.imagen-heroe {         
-    object-fit: cover;       
+.imagen-heroe {
+    
+    object-fit: cover;
     border-radius: 6px;
 }
 
 
 .card {
     background-color: var(--color-tarjeta);
-    border: 1px solid #17436e;
+    border: 1px solid #020202;
     border-radius: var(--borde-redondeado);
     box-shadow: var(--sombra-media);
     overflow: hidden;
-    padding:12px;
+    padding: 12px;
 }
 
 .card-body {
     display: flex;
     flex-direction: column;
-    padding:  10px;
+    padding: 10px;
 }
 
 .card-title {
     font-size: 1.2rem;
     margin-bottom: 10px;
-    text-transform:uppercase;
+    text-transform: uppercase;
 }
 
 .card-text {
@@ -77,28 +110,61 @@ body {
     margin-bottom: 5px;
 }
 
+/* Botón con animación */
 .btn-principal {
-    background-color: var(--color-acento);
-    border-color: var(--color-acento);
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    background: #42A5F5;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .btn-principal:hover {
-    background-color: var(--color-acento-hover);
-    border-color: var(--color-acento-hover);
-    transform: translateY(-2px);
+    background: #1E88E5;
+    /* Cambia a un tono más oscuro */
+    transform: scale(1.05);
+    /* Aumenta ligeramente el tamaño */
+}
+
+/*/ */
+.nav-tabs {
+    border-bottom: none;
 }
 
 .nav-tabs .nav-link {
+    color: var(--color-texto);
+    border: none;
     border-radius: var(--borde-redondeado) var(--borde-redondeado) 0 0;
     transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 600;
 }
 
-.nav-tabs .nav-link:hover, .nav-tabs .nav-link.active {
-    background-color: var(--color-acento);
-    color: var(--color-tarjeta);
-    border-color: var(--color-acento);
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link.active {
+    background-color: var(--color-primario);
+    color: white;
 }
+
+.form-label {
+    font-weight: 600;
+    color: var(--color-primario);
+}
+
+.form-control, .form-select {
+    border: 2px solid #e0e0e0;
+    border-radius: var(--borde-redondeado);
+    padding: 10px 15px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--color-acento);
+    box-shadow: 0 0 0 0.2rem rgba(76, 201, 240, 0.25);
+}
+/*/*/
+
 
 /* Ajustes para pantallas pequeñas */
 @media (max-width: 575px) {
