@@ -36,7 +36,7 @@ document.getElementById('formulario-heroe').addEventListener('submit', function 
         descripcion,
         imagen,
     };
-    axios.post('http://127.0.0.1/api/heroes', heroData)
+    axios.post('http://heroes-tdx5.vercel.app/api/heroes', heroData)
         .then((res) => {
             alert('Héroe registrado exitosamente');  
             document.getElementById('formulario-heroe').reset();  
@@ -79,7 +79,7 @@ function cargarHeroes() {
 
 
 function editarHeroe(id) {
-    axios.get(`http://127.0.0.1/api/heroes/${id}`)
+    axios.get(`http://heroes-tdx5.vercel.app/api/heroes/${id}`)
         .then((response) => {
             const heroe = response.data;
 
@@ -124,7 +124,7 @@ function actualizarHeroe(id) {
         imagen,
     };
 
-    axios.put(`http://127.0.0.1/api/heroes/${id}`, heroData)
+    axios.put(`http://heroes-tdx5.vercel.app/api/heroes/${id}`, heroData)
         .then(() => {
             alert('Héroe actualizado exitosamente');
             cargarHeroes();  // Refresca la lista con los datos actualizados
