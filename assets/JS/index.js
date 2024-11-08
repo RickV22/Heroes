@@ -85,9 +85,7 @@ function cargarHeroes() {
                 listaHeroes.insertAdjacentHTML('beforeend', tarjetaHeroe);
             });
         })
-        .catch((error) => {
-            console.error('Error al cargar los héroes:', error);
-        });
+        
 }
 
 
