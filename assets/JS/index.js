@@ -51,7 +51,7 @@ document.getElementById('formulario-heroe').addEventListener('submit', function 
 
 function cargarHeroes() {
     const listaHeroes = document.querySelector('#lista-heroes');
-    axios.get('http://heroes-tdx5.vercel.app/api/heroes')
+    axios.get('http://127.0.0.1:5000/api/heroes')
         .then((response) => response.data)
         .then((heroes) => {
             listaHeroes.innerHTML = '';
@@ -85,7 +85,9 @@ function cargarHeroes() {
                 listaHeroes.insertAdjacentHTML('beforeend', tarjetaHeroe);
             });
         })
-        
+        .catch((error) => {
+            console.error('Error al cargar los héroes:', error);
+        });
 }
 
 
