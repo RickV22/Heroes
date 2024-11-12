@@ -181,7 +181,7 @@ function guardarCambios(id) {
         });
 }
 
-
+/*
 function eliminarHeroe(id) {
     if (confirm('¿Está seguro de eliminar este héroe?')) {
         axios.delete(`https://heroes-tdx5.vercel.app/api/heroes/${id}`)
@@ -195,4 +195,4 @@ function eliminarHeroe(id) {
             });
     }
 }
-
+*/
