@@ -76,9 +76,9 @@ function cargarHeroes() {
                                     
                                 </div>
                             </div>
-                            <div class="d-flex justify-content-end mt-auto">
-                                <button class="btn btn-secondary me-2 justify-content-end font-monospace" onclick="editarHeroe(${heroe.id})">Editar</button>
-                                <button class="btn btn-danger justify-content-end" onclick="eliminarHeroe(${heroe.id})">Eliminar</button>       
+                            <div class="position-absolute bottom-0 end-0 ">
+                                <button class="btn btn-secondary" onclick="editarHeroe(${heroe.id})">Editar</button>
+                                <button class="btn btn-danger mt-auto" onclick="eliminarHeroe(${heroe.id})">Eliminar</button>       
                             </div>
                         </div>
                     </div>
