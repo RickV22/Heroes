@@ -65,7 +65,7 @@ function cargarHeroes() {
                                 </div>
                                 <div class="col flex-cloumn">
                                     <div class="card-body d-flex ">
-                                        <h5 class="card-title">${heroe.nombre}</h5>
+                                        <h5 class="card-title fw-bolder">${heroe.nombre}</h5>
                                         <p class="card-text fst-italic">Habilidad: ${heroe.habilidad}</p>
                                         <p class="card-text fst-italic">Universo: ${heroe.compania}</p>
                                         <p class="card-text fst-italic">Género: ${heroe.genero}</p>
