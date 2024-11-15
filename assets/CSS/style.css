@@ -169,6 +169,10 @@ body {
 @media (max-width: 575px) {
     .tarjeta-heroe {
         flex-direction: column;
+        margin-bottom: 10px;
+        margin-right: 0;
+        margin-left: 0;
+        margin-top: 15px;
     }
 
     .imagen-heroe {
@@ -182,6 +186,11 @@ body {
 
     .card-body {
         padding: 10px 0;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+
     }
 }
 
@@ -190,6 +199,9 @@ body {
     .tarjeta-heroe .row {
         display: flex;
         align-items: stretch;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+        justify-content: space-between;
     }
 
     .imagen-heroe {
