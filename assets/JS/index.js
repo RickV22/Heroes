@@ -70,14 +70,14 @@ function cargarHeroes() {
                                         <p class="card-text fst-italic">Universo: ${heroe.compania}</p>
                                         <p class="card-text fst-italic">Género: ${heroe.genero}</p>
                                         <div class="d-flex justify-content mt-2">
-                                            <button class="btn btn-info me-2" onclick="mostrarDescripcion('${heroe.descripcion}')">Descripción</button>
+                                            <button class="btn btn-info me-2 font-monospace" onclick="mostrarDescripcion('${heroe.descripcion}')">Descripción</button>
                                         </div>
                                     </div>
                                     
                                 </div>
                             </div>
                             <div class="d-flex justify-content-end mt-auto">
-                                <button class="btn btn-secondary me-2 justify-content-end" onclick="editarHeroe(${heroe.id})">Editar</button>
+                                <button class="btn btn-secondary me-2 justify-content-end font-monospace" onclick="editarHeroe(${heroe.id})">Editar</button>
                                 <button class="btn btn-danger justify-content-end" onclick="eliminarHeroe(${heroe.id})">Eliminar</button>       
                             </div>
                         </div>
