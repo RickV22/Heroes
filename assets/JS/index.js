@@ -78,7 +78,7 @@ function cargarHeroes() {
                             </div>
                             <div class="position-absolute bottom-0 end-0 ">
                                 <button class="btn btn-secondary" onclick="editarHeroe(${heroe.id})">Editar</button>
-                                /*<button class="btn btn-danger mt-auto" onclick="eliminarHeroe(${heroe.id})">Eliminar</button>*/       
+                                    
                             </div>
                         </div>
                     </div>
