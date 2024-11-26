@@ -132,6 +132,7 @@ function actualizarHeroe(id) {
     const compania = document.getElementById('editar-compania').value;
     const genero = document.getElementById('editar-genero').value;
     const descripcion = document.getElementById('editar-descripcion').value;
+    const imagen = document.getElemtById('editar-imagen').value;
 
     const heroData = {
         nombre,
