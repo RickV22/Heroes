@@ -67,7 +67,7 @@ def update_hero(id):
 
     sql = """
     UPDATE heroes 
-    SET nombre = %s, habilidad = %s, compania = %s, genero = %s, descripcion = %s, imagen = %s
+    SET nombre = %s, habilidad = %s, compania = %s, genero = %s, descripcion = %s, imagen = %s,
     WHERE id = %s
     """
     cursor.execute(sql, (updated_data['nombre'], updated_data['habilidad'], updated_data['compania'], updated_data['genero'], updated_data['descripcion'], id, update_data['imagen']))
