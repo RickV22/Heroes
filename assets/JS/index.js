@@ -132,7 +132,7 @@ function actualizarHeroe(id) {
     const compania = document.getElementById('editar-compania').value;
     const genero = document.getElementById('editar-genero').value;
     const descripcion = document.getElementById('editar-descripcion').value;
-    const imagen = document.getElementById('editar-imagen').value;
+    const imagen = document.getElementById('editar-imagen').src;
 
     const heroData = {
         nombre,
@@ -163,6 +163,7 @@ function guardarCambios(id) {
     const compania = document.getElementById(`compania-${id}`).value;
     const genero = document.getElementById(`genero-${id}`).value;
     const descripcion = document.getElementById(`descripcion-${id}`).value;
+    const imagen = document.getElementById(`imagen-${id}`).src;
 
     const heroeActualizado = {
         nombre,
@@ -170,6 +171,7 @@ function guardarCambios(id) {
         compania,
         genero,
         descripcion,
+        imagen,
     };
 
     axios.put(`https://heroes-tdx5.vercel.app/api/heroes/${id}`, heroeActualizado)
